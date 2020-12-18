@@ -1,12 +1,33 @@
 # 一些示例
 
 
-| 序号 | 示例名   | 备注        | 状态 |
-|----|-------|-----------|----|
-| 1  | jwt   | jwt相关实例   | ×  |
-| 2  | jpa   | jpa相关实例   | ×  |
-| 3  | mybatis   | jpa相关实例   | ×  |
-| 4  | api   | api相关实例   | ×  |
-| 5  | job   | 调度器相关实例   | ×  |
-| 6  | sso   | 单点登录相关实例  | ×  |
-| 7  | redis | redis相关实例 | ×  |
+- [ ] example
+
+    - [x] apis接口相关
+    
+        - [x] [接口返回示例](example-api/api-result/src/main/java/com/example/result/ApiResultApplication.java)
+            ```xml
+                <!-- springboot 项目中引入 -->
+                <dependency>
+                    <groupId>com.detabes</groupId>
+                    <artifactId>apis-result</artifactId>
+                    <version>1.0.0</version>
+                </dependency>
+            ``` 
+            - 普通接口返回示例 `testResultVO`
+            - 分页接口返回示例 `testResultVO_Page`
+            
+        - [x] [全局异常拦截示例](example-api/apis-exception/src/main/java/com/example/exception/ApisExceptionApplication.java)
+             ```xml
+                <!-- springboot 项目中引入 -->
+                <dependency>
+                    <groupId>com.detabes</groupId>
+                    <artifactId>apis-exception</artifactId>
+                    <version>1.0.0</version>
+                </dependency>
+             ``` 
+            - 测试全局异常示例   `testException`
+            - 自定义异常效果示例 `testBusinessException`
+        
+    - [x] []() 
+            
