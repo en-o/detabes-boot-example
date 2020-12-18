@@ -5,7 +5,7 @@
 
     - [x] apis接口相关
     
-        - [x] [接口返回示例](example-api/api-result/src/main/java/com/example/result/ApiResultApplication.java)
+        - [x] [接口返回示例](example-api/apis-result/src/main/java/com/example/result/ApiResultApplication.java)
             ```xml
                 <!-- springboot 项目中引入 -->
                 <dependency>
