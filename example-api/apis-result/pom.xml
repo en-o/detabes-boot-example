@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>api-result</artifactId>
+    <artifactId>apis-result</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>api-result</name>
+    <name>apis-result</name>
     <description>全局结果集返回 - 示例</description>
 
     <properties>
