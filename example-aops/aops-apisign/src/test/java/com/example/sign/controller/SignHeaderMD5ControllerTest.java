@@ -122,12 +122,12 @@ class SignHeaderMD5ControllerTest {
 
 
 /**********************************   私有方法  *************************************************/
-    private String sign(UserEntity userEntity){
+    protected String sign(UserEntity userEntity){
         String encrypt1 = SignMD5Util.encrypt(JSONObject.toJSONString(userEntity),true);
         return SignMD5Util.encrypt(encrypt1+PRIVATE_KEY, true);
     }
 
-    private String sign(Map userEntity){
+    protected String sign(Map userEntity){
         String encrypt1 = SignMD5Util.encrypt(JSONObject.toJSONString(userEntity),true);
         return SignMD5Util.encrypt(encrypt1+PRIVATE_KEY, true);
     }
@@ -138,7 +138,7 @@ class SignHeaderMD5ControllerTest {
      * @param name
      * @return
      */
-    private String sign(String age,String name){
+    protected String sign(String age,String name){
         String userParams = String.format("age=%s&name=%s",age, name);
         String encrypt1 = SignMD5Util.encrypt(userParams,true);
         return SignMD5Util.encrypt(encrypt1+PRIVATE_KEY, true);
@@ -146,7 +146,7 @@ class SignHeaderMD5ControllerTest {
     /**
      * @return
      */
-    private String sign(String jsonStr){
+    protected String sign(String jsonStr){
         String encrypt1 = SignMD5Util.encrypt(jsonStr,true);
         return SignMD5Util.encrypt(encrypt1+PRIVATE_KEY, true);
     }
