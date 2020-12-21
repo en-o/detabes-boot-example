@@ -34,3 +34,4 @@ HELP.md
 mvnw
 *.cmd
 .mvn
+/example-aops/.gitignore
