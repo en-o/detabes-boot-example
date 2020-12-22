@@ -63,4 +63,60 @@
                     
             - [x] [SHA验签之 sign在params中](example-aops/aops-apisign/src/main/java/com/example/sign/controller/SignParamsSHAController.java)           
                 - [单元测试跟使用参考](example-aops/aops-apisign/src/test/java/com/example/sign/controller/SignParamsSHAControllerTest.java)         
-                               
+    
+    - [ ] doc文档相关
+        - [x] 单体项目示例
+             ```xml
+                <!-- springboot 项目中引入: 注意扫描的是controller -->
+                <dependency>
+                    <groupId>com.detabes</groupId>
+                    <artifactId>doc-swagger-boot</artifactId>
+                    <version>1.0.0</version>
+                </dependency>
+            ``` 
+            - ***设置包扫描 application.properties ***
+            ```properties
+            server.port=15515
+            detabes.swagger.base-package=com.example.doc.swager.boot.controller
+            ```    
+            - [controller示例](example-doc/doc-swagger-boot/src/main/java/com/example/doc/swager/boot/controller/SwaggerController.java)    
+        
+        - [x] cloud项目示例
+             ```xml
+                <!-- springboot 项目中引入: 注意扫描的是controller -->
+                <dependency>
+                    <groupId>com.detabes</groupId>
+                    <artifactId>doc-swagger-cloud</artifactId>
+                    <version>1.0.0</version>
+                </dependency>
+             ``` 
+            - ***设置包扫描 bootstrap.yml ***
+            ```yaml
+            server:
+              port: 15516
+            detabes:
+              swagger:
+                base-package=com:
+                  example:
+                    doc:
+                      swager:
+                        boot:
+                          controller: com.example.doc.swagger.cloud.controller
+            ```    
+            - [controller示例](example-doc/doc-swagger-cloud/src/main/java/com/example/doc/swagger/cloud/controller/SwaggerController.java)                                   
+    
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                                       
