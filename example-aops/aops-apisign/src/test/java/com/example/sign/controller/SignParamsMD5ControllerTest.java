@@ -60,7 +60,7 @@ class SignParamsMD5ControllerTest {
 
         String userParams = String.format("name=%s&age=%s", "谭宁", "123");
         // 获取加密串
-        String sign = SignUtil.getSignBymap2Str(userParams);
+        String sign = SignUtil.getMd5SignBymap2Str(userParams);
         String userParamsOK =  String.format(userParams+"&sign=%s", sign);
         // 正确
         this.mockMvc.perform(MockMvcRequestBuilders.get("/params/md5/isSignMD5?"+userParamsOK))
@@ -94,7 +94,7 @@ class SignParamsMD5ControllerTest {
         UserEntity user = UserEntity.builder().age("123").name("谭宁").build();
         Map<String, Object> beanToMap = TempUtil.beanToMap(user);
         // 获取加密串
-        String sign = SignUtil.getSignByMap2Str(beanToMap);
+        String sign = SignUtil.getMd5SignByMap2Str(beanToMap);
         String userParams = SignUtil.map2Str(beanToMap);
         String userParamsOK =  String.format(userParams+"&sign=%s", sign);
         // 正确
@@ -125,7 +125,7 @@ class SignParamsMD5ControllerTest {
     void isSignMD5BeanP() throws Exception {
         UserEntity user = UserEntity.builder().age("123").name("谭宁").build();
         // 获取加密串
-        String sign = SignUtil.getSignBymap2Str(SignUtil.map2Str(TempUtil.beanToLinkedHashMap(user)));
+        String sign = SignUtil.getMd5SignBymap2Str(SignUtil.map2Str(TempUtil.beanToLinkedHashMap(user)));
         // 正确
         this.mockMvc.perform(MockMvcRequestBuilders.post("/params/md5/isSignMD5BeanP")
                 .contentType(MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -169,7 +169,7 @@ class SignParamsMD5ControllerTest {
         UserEntity2 userEntity2 = new UserEntity2();
         BeanUtils.copyProperties(userEntity2, user);
         // 获取加密串
-        String sign = SignUtil.getSignByBean2LinkedHashMap2Str(user);
+        String sign = SignUtil.getMd5SignByBean2LinkedHashMap2Str(user);
         userEntity2.setSign(sign);
         // 正确
         this.mockMvc.perform(MockMvcRequestBuilders.post("/params/md5/isSignMD5BeanPJson")

@@ -19,7 +19,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static com.example.sign.utils.SignUtil.getSignByJson;
 import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -47,7 +46,7 @@ class SignHeaderMD5ControllerTest {
     void testIsSignMD5BeanPJsonH() throws Exception {
         UserEntity user = UserEntity.builder().age("123").name("谭宁").build();
         // 获取加密串
-        String sign = SignUtil.getSignByJson(user);
+        String sign = SignUtil.getMd5SignByJson(user);
         // 正确
         HttpHeaders heanders = new HttpHeaders();
         heanders.set("sign",sign);
@@ -91,7 +90,7 @@ class SignHeaderMD5ControllerTest {
         UserEntity user = UserEntity.builder().age("123").name("谭宁").build();
         String userParams = String.format("age=%s&name=%s",user.getAge(), user.getName());
         // 获取加密串
-        String sign = SignUtil.getSignByJson(user);
+        String sign = SignUtil.getMd5SignByJson(user);
         // 正确
         HttpHeaders heanders = new HttpHeaders();
         heanders.set("sign",sign);
@@ -141,7 +140,7 @@ class SignHeaderMD5ControllerTest {
         userArrayList.add(user);
         // 获取加密串
         String jsonString = JSONArray.toJSONString(userArrayList);
-        String sign = getSignByJson(jsonString);
+        String sign = SignUtil.getMd5SignByJson(jsonString);
         // 正确
         HttpHeaders heanders = new HttpHeaders();
         heanders.set("sign",sign);
