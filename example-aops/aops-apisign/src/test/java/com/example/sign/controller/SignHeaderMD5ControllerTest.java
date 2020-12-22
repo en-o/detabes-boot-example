@@ -2,7 +2,6 @@ package com.example.sign.controller;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.detabes.encryption.core.SignMD5Util;
 import com.example.sign.entity.UserEntity;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -18,8 +17,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Map;
 
+import static com.example.sign.utils.SignUtil.sign;
 import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -37,10 +36,6 @@ class SignHeaderMD5ControllerTest {
      */
     @Autowired
     private MockMvc mockMvc;
-
-
-    public static String PRIVATE_KEY = "MD5database";
-
 
     /**
      * 验证MD5加密 - post json header
@@ -187,35 +182,4 @@ class SignHeaderMD5ControllerTest {
 
     }
 
-
-
-/**********************************   私有方法  *************************************************/
-    protected String sign(UserEntity userEntity){
-        String encrypt1 = SignMD5Util.encrypt(JSONObject.toJSONString(userEntity),true);
-        return SignMD5Util.encrypt(encrypt1+PRIVATE_KEY, true);
-    }
-
-    protected String sign(Map userEntity){
-        String encrypt1 = SignMD5Util.encrypt(JSONObject.toJSONString(userEntity),true);
-        return SignMD5Util.encrypt(encrypt1+PRIVATE_KEY, true);
-    }
-
-    /**
-     * 注意顺序就是 age，name
-     * @param age
-     * @param name
-     * @return
-     */
-    protected String sign(String age,String name){
-        String userParams = String.format("age=%s&name=%s",age, name);
-        String encrypt1 = SignMD5Util.encrypt(userParams,true);
-        return SignMD5Util.encrypt(encrypt1+PRIVATE_KEY, true);
-    }
-    /**
-     * @return
-     */
-    protected String sign(String jsonStr){
-        String encrypt1 = SignMD5Util.encrypt(jsonStr,true);
-        return SignMD5Util.encrypt(encrypt1+PRIVATE_KEY, true);
-    }
 }
