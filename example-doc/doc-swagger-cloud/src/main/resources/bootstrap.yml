@@ -1,0 +1,10 @@
+server:
+  port: 15516
+detabes:
+  swagger:
+    base-package=com:
+      example:
+        doc:
+          swager:
+            boot:
+              controller: com.example.doc.swagger.cloud.controller
