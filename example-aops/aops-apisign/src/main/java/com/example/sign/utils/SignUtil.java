@@ -17,12 +17,12 @@ import java.util.LinkedHashMap;
 public class SignUtil extends com.detabes.apisign.util.SignUtil {
 
 
-    public static String getSignByJson(UserEntity userEntity){
+    public static String getMd5SignByJson(UserEntity userEntity){
         String encrypt1 = SignMD5Util.encrypt(JSONObject.toJSONString(userEntity),true);
         return SignMD5Util.encrypt(encrypt1+ SignConstant.MD5_PRIVATE_KEY, true);
     }
 
-    public static String getSignByBean2LinkedHashMap2Str(UserEntity userEntity){
+    public static String getMd5SignByBean2LinkedHashMap2Str(UserEntity userEntity){
         LinkedHashMap<String, Object> stringObjectLinkedHashMap = TempUtil.beanToLinkedHashMap(userEntity);
         String encrypt1 = SignMD5Util.encrypt(map2Str(stringObjectLinkedHashMap),true);
         return SignMD5Util.encrypt(encrypt1+ SignConstant.MD5_PRIVATE_KEY, true);
