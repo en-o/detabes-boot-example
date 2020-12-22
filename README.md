@@ -58,7 +58,9 @@
             - [x] [MD5验签之 sign在header中](example-aops/aops-apisign/src/main/java/com/example/sign/controller/SignHeaderMD5Controller.java)           
                 - [单元测试跟使用参考](example-aops/aops-apisign/src/test/java/com/example/sign/controller/SignHeaderMD5ControllerTest.java)      
             
-            - [ ] [MD5验签之 sign在params中](example-aops/aops-apisign/src/main/java/com/example/sign/controller/SignParamsMD5Controller.java)           
+            - [x] [MD5验签之 sign在params中](example-aops/aops-apisign/src/main/java/com/example/sign/controller/SignParamsMD5Controller.java)           
                             - [单元测试跟使用参考](example-aops/aops-apisign/src/test/java/com/example/sign/controller/SignParamsMD5ControllerTest.java)         
                     
-                    
+            - [x] [SHA验签之 sign在params中](example-aops/aops-apisign/src/main/java/com/example/sign/controller/SignParamsSHAController.java)           
+                            - [单元测试跟使用参考](example-aops/aops-apisign/src/test/java/com/example/sign/controller/SignParamsSHAControllerTest.java)         
+                               
