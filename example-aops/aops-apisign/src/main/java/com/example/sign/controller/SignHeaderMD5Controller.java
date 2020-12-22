@@ -19,7 +19,7 @@ import java.util.List;
  * @description 验证签名
  * @date 2020/12/21 14:39
  */
-@RequestMapping("/header")
+@RequestMapping("/header/md5")
 @RestController
 public class SignHeaderMD5Controller {
 
