@@ -1,10 +1,11 @@
 package com.example.sign.utils;
 
 import com.alibaba.fastjson.JSONObject;
+import com.detabes.encryption.constant.SignConstant;
 import com.detabes.encryption.core.SignMD5Util;
 import com.example.sign.entity.UserEntity;
 
-import java.util.Map;
+import java.util.LinkedHashMap;
 
 /**
  * @author tn
@@ -13,36 +14,18 @@ import java.util.Map;
  * @description 验证工具
  * @date 2020/12/22 10:03
  */
-public class SignUtil {
+public class SignUtil extends com.detabes.apisign.util.SignUtil {
 
-    public static String PRIVATE_KEY = "MD5database";
 
-    public static String sign(UserEntity userEntity){
+    public static String getSignByJson(UserEntity userEntity){
         String encrypt1 = SignMD5Util.encrypt(JSONObject.toJSONString(userEntity),true);
-        return SignMD5Util.encrypt(encrypt1+PRIVATE_KEY, true);
+        return SignMD5Util.encrypt(encrypt1+ SignConstant.MD5_PRIVATE_KEY, true);
     }
 
-    public static String sign(Map userEntity){
-        String encrypt1 = SignMD5Util.encrypt(JSONObject.toJSONString(userEntity),true);
-        return SignMD5Util.encrypt(encrypt1+PRIVATE_KEY, true);
+    public static String getSignByBean2LinkedHashMap2Str(UserEntity userEntity){
+        LinkedHashMap<String, Object> stringObjectLinkedHashMap = TempUtil.beanToLinkedHashMap(userEntity);
+        String encrypt1 = SignMD5Util.encrypt(map2Str(stringObjectLinkedHashMap),true);
+        return SignMD5Util.encrypt(encrypt1+ SignConstant.MD5_PRIVATE_KEY, true);
     }
 
-    /**
-     * 注意顺序就是 age，name
-     * @param age
-     * @param name
-     * @return
-     */
-    public static String sign(String age,String name){
-        String userParams = String.format("age=%s&name=%s",age, name);
-        String encrypt1 = SignMD5Util.encrypt(userParams,true);
-        return SignMD5Util.encrypt(encrypt1+PRIVATE_KEY, true);
-    }
-    /**
-     * @return
-     */
-    public static String sign(String jsonStr){
-        String encrypt1 = SignMD5Util.encrypt(jsonStr,true);
-        return SignMD5Util.encrypt(encrypt1+PRIVATE_KEY, true);
-    }
 }
