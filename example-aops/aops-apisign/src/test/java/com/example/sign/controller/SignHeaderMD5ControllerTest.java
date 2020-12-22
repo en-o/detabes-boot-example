@@ -60,7 +60,7 @@ class SignHeaderMD5ControllerTest {
                 .andReturn();
 
         // - 模拟数据中途被篡改
-        // 参数顺序错误  加密顺序 age,name  参数顺序name,age,
+        // 参数顺序错误  加密顺序 age,name  传入参数顺序name,age,
         // 在使用bean json序列化是顺序的差异会被掩盖导致顺序一致判断失效
         UserEntity userParamsSortError = UserEntity.builder().name("谭宁").age("123").build();
         this.mockMvc.perform(MockMvcRequestBuilders.post("/header/md5/isSignMD5BeanPJsonH")
@@ -103,7 +103,7 @@ class SignHeaderMD5ControllerTest {
                 .andReturn();
 
         // - 模拟数据中途被篡改
-        // 参数顺序错误  加密顺序 age,name  参数顺序name,age ()，get方式强制严重参数顺序
+        // 参数顺序错误  加密顺序 age,name  传入参数顺序name,age ()，get方式强制严重参数顺序
         String userParamsSortError = String.format("name=%s&age=%s", user.getName(), user.getAge());
         this.mockMvc.perform(MockMvcRequestBuilders.get("/header/md5/isSignMD5BeanH?"+userParamsSortError)
                 .contentType(MediaType.MULTIPART_FORM_DATA)
