@@ -145,8 +145,26 @@
                 ```text
                  自定义保存方法：{"sex":"2","name":"谭宁","time":1608702435740}
                 ```
-  
-  
+        - [x] [jpa测试示例](example-cache/caches-jpa-server/src/main/java/com/example/jpa/server/controller/JpaExampleController.java)
+              
+             ```xml
+                <dependency>
+                    <groupId>com.detabes</groupId>
+                    <artifactId>caches-redis-pub</artifactId>
+                    <version>1.0.0</version>
+                </dependency>
+            ```  
+            - 初始化需要配置数据库
+                ```xml
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                    </dependency>
+                ```     
+            - 主要测试了
+               - [bean继承基类](example-cache/caches-jpa-server/src/main/java/com/example/jpa/server/entity/JpaExample.java)
+               - [dao继承基类](example-cache/caches-jpa-server/src/main/java/com/example/jpa/server/dao/JpaExampleDao.java)
+               - [实体转型的方法 to 在controller中的使用](example-cache/caches-jpa-server/src/main/java/com/example/jpa/server/controller/vo/JpaExampleVo.java)
   
   
   
