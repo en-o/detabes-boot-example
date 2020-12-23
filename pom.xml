@@ -14,6 +14,8 @@
         <module>example-doc</module>
         <module>example-cache</module>
         <module>example-test</module>
+        <module>example-web</module>
+        <module>example-boot</module>
     </modules>
 
 
