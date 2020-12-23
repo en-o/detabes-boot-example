@@ -106,16 +106,74 @@
                           controller: com.example.doc.swagger.cloud.controller
             ```    
             - [controller示例](example-doc/doc-swagger-cloud/src/main/java/com/example/doc/swagger/cloud/controller/SwaggerController.java)                                   
-    
-        
-            
-            
-            
-            
-            
-            
-            
-            
+
+    - [ ] cache数据相关
+        - [x] [redis消息推送跟监听](example-cache/caches-redis-pub/src/main/java/com/example/redis/pub/CachesRedisPubApplication.java)        
+            ```xml
+              	<dependency>
+                    <groupId>com.detabes</groupId>
+                    <artifactId>caches-redis-pub</artifactId>
+                    <version>1.0.0</version>
+                </dependency>
+            ```         
+           - 引入依赖
+           - [构造消息发送接口](example-cache/caches-redis-pub/src/main/java/com/example/redis/pub/controller/RedisMessageController.java)
+           - 默认配置本机redis (保证redis正常运行且没有密码)
+           - 观测
+                - 打开redis管理端（命令行）输入命令 `SUBSCRIBE 频道名`  
+                    - 默认频道有两个： test, tn
+                - [调用接口](example-cache/caches-redis-pub/src/main/java/com/example/redis/pub/controller/RedisMessageController.java)
+                - 观测项目控制台的输出跟redis管里端的输出
+                ```text
+                    2020-12-23 13:13:54.222  INFO 16316 --- [    container-7] c.d.r.pub.server.impl.RedisReceiverImpl  : 
+                    ----------------------------------------------------------
+                        redis监听频道 test 的消息
+                        消息体：{"sex":"2","name":"谭宁","time":1608700434197}
+                    ----------------------------------------------------------
+                
+                    本机:0>SUBSCRIBE test
+                    Switch to Pub/Sub mode. Close console tab to stop listen for messages.
+                     1)  "subscribe"
+                     2)  "test"
+                     3)  "1"
+                     1)  "message"
+                     2)  "test"
+                     3)  "{"sex":"2","name":"谭宁","time":1608700434197}"
+                ```    
+           - [默认项目中接受消息默认为控制台答应如果想要修改](example-cache/caches-redis-pub/src/main/java/com/example/redis/pub/message/MessageSave.java) 
+                - `expected single matching bean but found 2` 错误请在实现类上加入 `@Primary`
+                ```text
+                 自定义保存方法：{"sex":"2","name":"谭宁","time":1608702435740}
+                ```
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
             
             
             
