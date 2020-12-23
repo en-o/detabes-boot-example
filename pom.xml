@@ -13,6 +13,7 @@
         <module>example-aops</module>
         <module>example-doc</module>
         <module>example-cache</module>
+        <module>example-test</module>
     </modules>
 
 
