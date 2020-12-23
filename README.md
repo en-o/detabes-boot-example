@@ -42,7 +42,6 @@
                 </dependency>
          ```
           
-
         - 接口记录 - 只有日志打印功能(示例) `testApiLogAspectSee`
             - [测试io开头的包名打印是否成功（默认是com开头）](example-aops/aops-apilog/src/main/java/io/example/log/controller/TestLog.java)
         - 接口记录保存 - 可以打印日志可以报错日志，看你怎么选择(示例) `testApiLogAspectSave`

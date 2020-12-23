@@ -12,6 +12,7 @@
         <module>example-api</module>
         <module>example-aops</module>
         <module>example-doc</module>
+        <module>example-cache</module>
     </modules>
 
 
