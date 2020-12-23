@@ -1,9 +1,9 @@
 # 一些示例
 
 
-- [ ] example
+- # example
 
-    - [x] apis接口相关
+    - ## apis接口相关
     
         - [x] [接口返回示例](example-api/apis-result/src/main/java/com/example/result/ApiResultApplication.java)
             ```xml
@@ -29,7 +29,7 @@
             - 测试全局异常示例   `testException`
             - 自定义异常效果示例 `testBusinessException`
         
-    - [ ] aop切面相关
+    - ## aop切面相关
         
         - [x] [接口日志打印跟保存](example-aops/aops-apilog/src/main/java/com/example/log/controller/TestLog.java)
              
@@ -48,7 +48,7 @@
             - 接口保存注解默认是打印功能跟上面的`testApiLogAspectSee`一样,[如要做保存请参考](example-aops/aops-apilog/src/main/java/com/example/log/config/ApiLogSaveImpl.java)  
                     - 如果出现 错误 ```Field apiLogSave in com.detabes.apilog.aspect.ApiLogAspectSave required a single bean, but 2 were found:``` ,[请参考](example-aops/aops-apilog/src/main/java/com/example/log/config/ApiLogSaveImplTest.java)
                     
-        - [ ] 接口验签 
+        - [x] 接口验签 
              ```xml
                 <!-- springboot 项目中引入: 使用注解 @Signature 相关参数内部有说明 -->
                 <dependency>
@@ -66,7 +66,7 @@
             - [x] [SHA验签之 sign在params中](example-aops/aops-apisign/src/main/java/com/example/sign/controller/SignParamsSHAController.java)           
                 - [单元测试跟使用参考](example-aops/aops-apisign/src/test/java/com/example/sign/controller/SignParamsSHAControllerTest.java)         
     
-    - [ ] doc文档相关
+    - ## doc文档相关
         - [x] 单体项目示例
              ```xml
                 <!-- springboot 项目中引入: 注意扫描的是controller -->
@@ -107,7 +107,7 @@
             ```    
             - [controller示例](example-doc/doc-swagger-cloud/src/main/java/com/example/doc/swagger/cloud/controller/SwaggerController.java)                                   
 
-    - [ ] cache数据相关
+    - ## cache数据相关
         - [x] [redis消息推送跟监听](example-cache/caches-redis-pub/src/main/java/com/example/redis/pub/CachesRedisPubApplication.java)        
             ```xml
               	<dependency>
