@@ -5,7 +5,7 @@
 
     - ## apis接口相关
     
-        - [x] [接口返回示例](example-api/apis-result/src/main/java/com/example/result/ApiResultApplication.java)
+        - ### [接口返回示例](example-api/apis-result/src/main/java/com/example/result/ApiResultApplication.java)
             ```xml
                 <!-- springboot 项目中引入 -->
                 <dependency>
@@ -17,7 +17,7 @@
             - 普通接口返回示例 `testResultVO`
             - 分页接口返回示例 `testResultVO_Page`
             
-        - [x] [全局异常拦截示例](example-api/apis-exception/src/main/java/com/example/exception/ApisExceptionApplication.java)
+        - ### [全局异常拦截示例](example-api/apis-exception/src/main/java/com/example/exception/ApisExceptionApplication.java)
              ```xml
                 <!-- springboot 项目中引入 -->
                 <dependency>
@@ -31,7 +31,7 @@
         
     - ## aop切面相关
         
-        - [x] [接口日志打印跟保存](example-aops/aops-apilog/src/main/java/com/example/log/controller/TestLog.java)
+        - ### [接口日志打印跟保存](example-aops/aops-apilog/src/main/java/com/example/log/controller/TestLog.java)
              
          ```xml
                 <!-- springboot 项目中引入: 注意扫描的是controller -->
@@ -48,7 +48,7 @@
             - 接口保存注解默认是打印功能跟上面的`testApiLogAspectSee`一样,[如要做保存请参考](example-aops/aops-apilog/src/main/java/com/example/log/config/ApiLogSaveImpl.java)  
                     - 如果出现 错误 ```Field apiLogSave in com.detabes.apilog.aspect.ApiLogAspectSave required a single bean, but 2 were found:``` ,[请参考](example-aops/aops-apilog/src/main/java/com/example/log/config/ApiLogSaveImplTest.java)
                     
-        - [x] 接口验签 
+        - ### 接口验签 
              ```xml
                 <!-- springboot 项目中引入: 使用注解 @Signature 相关参数内部有说明 -->
                 <dependency>
@@ -67,7 +67,7 @@
                 - [单元测试跟使用参考](example-aops/aops-apisign/src/test/java/com/example/sign/controller/SignParamsSHAControllerTest.java)         
     
     - ## doc文档相关
-        - [x] 单体项目示例
+        - ### 单体项目示例
              ```xml
                 <!-- springboot 项目中引入: 注意扫描的是controller -->
                 <dependency>
@@ -83,7 +83,7 @@
             ```    
             - [controller示例](example-doc/doc-swagger-boot/src/main/java/com/example/doc/swager/boot/controller/SwaggerController.java)    
         
-        - [x] cloud项目示例
+        - ### cloud项目示例
              ```xml
                 <!-- springboot 项目中引入: 注意扫描的是controller -->
                 <dependency>
@@ -108,7 +108,7 @@
             - [controller示例](example-doc/doc-swagger-cloud/src/main/java/com/example/doc/swagger/cloud/controller/SwaggerController.java)                                   
 
     - ## cache数据相关
-        - [x] [redis消息推送跟监听](example-cache/caches-redis-pub/src/main/java/com/example/redis/pub/CachesRedisPubApplication.java)        
+        - ### [redis消息推送跟监听](example-cache/caches-redis-pub/src/main/java/com/example/redis/pub/CachesRedisPubApplication.java)        
             ```xml
               	<dependency>
                     <groupId>com.detabes</groupId>
@@ -145,7 +145,7 @@
                 ```text
                  自定义保存方法：{"sex":"2","name":"谭宁","time":1608702435740}
                 ```
-        - [x] [jpa测试示例](example-cache/caches-jpa-server/src/main/java/com/example/jpa/server/controller/JpaExampleController.java)
+        - ### [jpa测试示例](example-cache/caches-jpa-server/src/main/java/com/example/jpa/server/controller/JpaExampleController.java)
               
              ```xml
                 <dependency>
@@ -167,7 +167,7 @@
                - [实体转型的方法 to 在controller中的使用](example-cache/caches-jpa-server/src/main/java/com/example/jpa/server/controller/vo/JpaExampleVo.java)
   
     - ## web相关
-        - [web-jwt示例](example-web/webs-jwt/src/main/java/com/example/jwt/WebsJwtApplication.java)
+        - ### [web-jwt示例](example-web/webs-jwt/src/main/java/com/example/jwt/WebsJwtApplication.java)
             ```xml
                 <dependency>
                     <groupId>com.detabes</groupId>
