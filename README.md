@@ -168,16 +168,16 @@
   
     - ## web相关
         - [web-jwt示例](example-web/webs-jwt/src/main/java/com/example/jwt/WebsJwtApplication.java)
-        ```xml
-            <dependency>
-                <groupId>com.detabes</groupId>
-                <artifactId>webs-jwt</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-        ```
-         - [接口示例](example-web/webs-jwt/src/main/java/com/example/jwt/controller/JwtController.java)
-         - [配置文件放行配置](example-web/webs-jwt/src/main/resources/application.properties)  
-         - [配置文件加密配置](example-web/webs-jwt/src/main/resources/application.properties)  
+            ```xml
+                <dependency>
+                    <groupId>com.detabes</groupId>
+                    <artifactId>webs-jwt</artifactId>
+                    <version>1.0.0</version>
+                </dependency>
+            ```
+            - [接口示例](example-web/webs-jwt/src/main/java/com/example/jwt/controller/JwtController.java)
+            - [配置文件放行配置](example-web/webs-jwt/src/main/resources/application.properties)  
+            - [配置文件加密配置](example-web/webs-jwt/src/main/resources/application.properties)  
       
       
       
