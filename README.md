@@ -179,7 +179,6 @@
             - [配置文件放行配置](example-web/webs-jwt/src/main/resources/application.properties)  
             - [配置文件加密配置](example-web/webs-jwt/src/main/resources/application.properties)  
     
-    - ## webs-socket相关  
         - ### [webs-socket示例](example-web/webs-socket/src/main/java/com/example/webs/socket/WebsSocketApplication.java)
             ```xml
                   <dependency>
