@@ -178,10 +178,26 @@
             - [接口示例](example-web/webs-jwt/src/main/java/com/example/jwt/controller/JwtController.java)
             - [配置文件放行配置](example-web/webs-jwt/src/main/resources/application.properties)  
             - [配置文件加密配置](example-web/webs-jwt/src/main/resources/application.properties)  
-      
-      
-      
     
+    - ## webs-socket相关  
+        - ### [webs-socket示例](example-web/webs-socket/src/main/java/com/example/webs/socket/WebsSocketApplication.java)
+            ```xml
+                  <dependency>
+                    <groupId>com.detabes</groupId>
+                    <artifactId>webs-socket-client</artifactId>
+                    <version>1.0.0</version>
+                  </dependency>
+            ```
+            - 无需配置
+            - [接口示例](example-web/webs-socket/src/main/java/com/example/webs/socket/controller/WebSocketController.java)
+                - 继承默认接口 `SocketController.java`  自带两个Action 
+                - 自定义了一个接口 `sendInfoByLikeKey` [实现类](example-web/webs-socket/src/main/java/com/example/webs/socket/service/AlarmWebSocketServer.java)
+            - 使用方法
+                - socket的连接接口为：
+                    - ws://127.0.0.1:port/context-path/socket/频道名
+                    - ws://127.0.0.1:1243/socket/tanning123  
+                - socket消息发送 
+                    -  127.0.0.1:1243/websocket/sendInfoByLikeKey?keyPrefix=tanning&message=测试   
 
   
   
