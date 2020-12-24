@@ -1,5 +1,5 @@
 server:
-  port: 15516
+  port: 1241
 detabes:
   swagger:
     base-package=com:
