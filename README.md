@@ -189,7 +189,7 @@
             ```
             - 无需配置
             - [接口示例](example-web/webs-socket/src/main/java/com/example/webs/socket/controller/WebSocketController.java)
-                - 继承默认接口 `SocketController.java`  自带两个Action 
+                - 继承默认接口 `SocketController.java`  自带两个 [Action](com/detabes/websocket/client/controller/SocketController.java)
                 - 自定义了一个接口 `sendInfoByLikeKey` [实现类](example-web/webs-socket/src/main/java/com/example/webs/socket/service/AlarmWebSocketServer.java)
             - 使用方法
                 - socket的连接接口为：
