@@ -38,4 +38,16 @@ public class ApisExceptionApplication {
         System.out.println("hi businessException");
         throw  new BusinessException(ResultCodeEnum.SysError);
     }
+
+
+    /**
+     * 自定义异常效果示例 只传message
+     * @return
+     */
+    @GetMapping("/testBusinessExceptionByMessage")
+    @ResponseBody
+    public void testBusinessExceptionByMessage() {
+        System.out.println("hi businessException");
+        throw  new BusinessException("自定义异常效果示例 只传message");
+    }
 }
