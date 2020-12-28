@@ -197,9 +197,39 @@
                     - ws://127.0.0.1:1243/socket/tanning123  
                 - socket消息发送 
                     -  127.0.0.1:1243/websocket/sendInfoByLikeKey?keyPrefix=tanning&message=测试   
-
-  
-  
+    
+    - ## boot相关
+        - ### [单机项目示例 - 无数据库示例](example-boot/detabes-boot-web/src/main/java/com/example/detabes/boot/web/DetabesBootWebApplication.java)
+             ```xml
+                  <!-- 父项目 -->
+                  <parent>
+                        <groupId>com.detabes</groupId>
+                        <artifactId>component-starters</artifactId>
+                        <version>1.0.0</version>
+                        <relativePath/> <!-- lookup parent from repository -->
+                  </parent>
+                  <!-- boot-web依赖 -->
+                  <dependency>
+                    <groupId>com.detabes</groupId>
+                    <artifactId>starters-detabes-boot-web</artifactId>
+                  </dependency>
+            ```    
+            - 别忘了看配置文件  application.properties
+            - 如果要配置数据持久层 [jpa测试示例](example-cache/caches-jpa-server/src/main/java/com/example/jpa/server/controller/JpaExampleController.java)
+                 ```xml
+                      <!-- 父项目 -->
+                      <parent>
+                            <groupId>com.detabes</groupId>
+                            <artifactId>component-starters</artifactId>
+                            <version>1.0.0</version>
+                            <relativePath/> <!-- lookup parent from repository -->
+                      </parent>
+                      <!-- boot-web-jpa依赖 -->
+                    <dependency>
+                        <groupId>com.detabes</groupId>
+                        <artifactId>starters-detabes-boot-web-jpa</artifactId>
+                    </dependency>
+                 ```                    
   
   
   
