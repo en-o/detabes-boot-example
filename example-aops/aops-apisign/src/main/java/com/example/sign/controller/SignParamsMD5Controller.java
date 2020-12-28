@@ -29,7 +29,7 @@ public class SignParamsMD5Controller {
     @GetMapping(value = "/isSign")
     @Signature(type = SginEnum.ANY)
     public ResultVO isSign(String name, String age){
-        return ResultVO.success(name+age);
+        return ResultVO.successForData(name+age);
     }
 
     /**
@@ -41,7 +41,7 @@ public class SignParamsMD5Controller {
     @GetMapping(value = "/isSignMD5")
     @Signature(type = SginEnum.MD5)
     public ResultVO isSignMD5(String name,String age){
-        return ResultVO.success(name+age);
+        return ResultVO.successForData(name+age);
     }
 
 
@@ -53,7 +53,7 @@ public class SignParamsMD5Controller {
     @GetMapping(value = "/isSignMD5Bean")
     @Signature(type = SginEnum.MD5)
     public ResultVO isSignMD5Bean(UserEntity UserEntity){
-        return ResultVO.success(UserEntity);
+        return ResultVO.successForData(UserEntity);
     }
 
     /**
@@ -64,7 +64,7 @@ public class SignParamsMD5Controller {
     @PostMapping(value = "/isSignMD5BeanP")
     @Signature(type = SginEnum.MD5)
     public ResultVO isSignMD5BeanP(UserEntity userEntity){
-        return ResultVO.success(userEntity);
+        return ResultVO.successForData(userEntity);
     }
 
     /**
@@ -76,7 +76,7 @@ public class SignParamsMD5Controller {
     @Signature(type = SginEnum.MD5)
     public ResultVO isSignMD5BeanPJson(@RequestBody(required = false) UserEntity userEntity){
         System.out.println("userEntity.toString() = " + userEntity.toString());
-        return ResultVO.success(userEntity);
+        return ResultVO.successForData(userEntity);
     }
 
 }

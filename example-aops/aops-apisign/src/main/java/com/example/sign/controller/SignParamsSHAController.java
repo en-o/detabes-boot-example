@@ -28,7 +28,7 @@ public class SignParamsSHAController {
     @GetMapping(value = "/isSignSHA")
     @Signature(type = SginEnum.SHA)
     public ResultVO isSignSHA(String name,String age){
-        return ResultVO.success(name+age);
+        return ResultVO.successForData(name+age);
     }
 
 
@@ -51,7 +51,7 @@ public class SignParamsSHAController {
     @PostMapping(value = "/isSignSHABeanP")
     @Signature(type = SginEnum.SHA)
     public ResultVO isSignSHABeanP(UserEntity userEntity){
-        return ResultVO.success(userEntity);
+        return ResultVO.successForData(userEntity);
     }
 
     /**
@@ -63,6 +63,6 @@ public class SignParamsSHAController {
     @Signature(type = SginEnum.SHA)
     public ResultVO isSignSHABeanPJson(@RequestBody UserEntity userEntity){
         System.out.println("userEntity.toString() = " + userEntity.toString());
-        return ResultVO.success(userEntity);
+        return ResultVO.successForData(userEntity);
     }
 }
