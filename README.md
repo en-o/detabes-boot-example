@@ -83,7 +83,7 @@
             ```    
             - [controller示例](example-doc/doc-swagger-boot/src/main/java/com/example/doc/swager/boot/controller/SwaggerController.java)    
         
-        - ### cloud项目示例
+        - ### cloud项目示例 - 添加了nacos
              ```xml
                 <!-- springboot 项目中引入: 注意扫描的是controller -->
                 <dependency>
@@ -106,6 +106,8 @@
                           controller: com.example.doc.swagger.cloud.controller
             ```    
             - [controller示例](example-doc/doc-swagger-cloud/src/main/java/com/example/doc/swagger/cloud/controller/SwaggerController.java)                                   
+        - ### swaggeer聚合项目文档示例 - nacos
+            - [主要是配置文件跟 pom依赖](example-doc/doc-swagger-cloud-aggregate/src/main/java/com/detabes/cloud/doc/swagger/DocSwaggerCloudAggregateApplication.java)
 
     - ## cache数据相关
         - ### [redis消息推送跟监听](example-cache/caches-redis-pub/src/main/java/com/example/redis/pub/CachesRedisPubApplication.java)        
