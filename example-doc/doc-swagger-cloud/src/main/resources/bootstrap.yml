@@ -1,5 +1,12 @@
 server:
   port: 1241
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: def
+  application:
+    name: cloud-demo
 detabes:
   swagger:
     base-package=com:
@@ -8,3 +15,7 @@ detabes:
           swager:
             boot:
               controller: com.example.doc.swagger.cloud.controller
+
+logging:
+  config: classpath:logback-spring.xml
+debug: false

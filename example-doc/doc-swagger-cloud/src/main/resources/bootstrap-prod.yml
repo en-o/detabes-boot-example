@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: api.databstech.com # 注册中心
+        group: databstech
+        namespace: prod
+      config:
+        server-addr: api.databstech.com # 配置中心
+        group: databstech
+        namespace: prod
+        file-extension: yaml  #文件扩展名格式,针对于默认的{spring.application.name}-${profile}.${file-extension:properties}配置
+        enabled: true #开启或关闭配置中心
+        encode: UTF-8
