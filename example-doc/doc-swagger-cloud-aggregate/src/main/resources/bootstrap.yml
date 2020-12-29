@@ -1,0 +1,31 @@
+server:
+  port: 202
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: def
+  application:
+    name: cloud-swagger
+detabes:
+  swagger:
+    base-package=com:
+      example:
+        doc:
+          swager:
+            boot:
+              controller: com.detabes.cloud.doc.swagger.controller
+logging:
+  config: classpath:logback-spring.xml
+debug: false
+
+knife4j:
+  enableAggregation: true
+  nacos:
+    enable: true # 将该属性设置为true，则代表启用nacos模式
+    serviceUrl: http://localhost:8848/nacos/ # nacos注册中心的地址
+    routes:
+      - name: 测试cloud项目
+        serviceName: cloud-demo # nacos注册中心的服务名称
+        location: /v2/api-docs # 具体资源接口地址，最终Knife4j是通过注册服务uri+location的组合路径进行访问
+        servicePath: /api/cloud # 该属性是最终在Ui中展示的接口前缀属性(跟随网关的前缀)
