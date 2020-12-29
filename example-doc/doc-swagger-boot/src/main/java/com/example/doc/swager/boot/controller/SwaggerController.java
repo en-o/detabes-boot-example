@@ -27,7 +27,7 @@ public class SwaggerController {
 
     @GetMapping("/getMethodTwo")
     @ApiOperation(value = "测试接口2", notes = "测试swaggger接口文档")
-    @ApiImplicitParam(value = "姓名", name = "name")
+    @ApiImplicitParam(value = "姓名", name = "name", dataTypeClass = String.class)
     public String getMethodTwo(String name) {
         return "hi swagger:"+name;
     }
