@@ -56,7 +56,7 @@ public class JpaExampleController {
      */
     @GetMapping("/getAll")
     public ResultVO<List<JpaExample>> getAll() {
-        return ResultVO.success(jpaExampleDao.findAll());
+        return ResultVO.successForData(jpaExampleDao.findAll());
     }
 
     /**
