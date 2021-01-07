@@ -1,7 +1,7 @@
 # 一些示例
 
 
-- # example
+- # [详细文档](https://www.yuque.com/tanning/yg9ipo/)
 
     - ## apis接口相关
     
