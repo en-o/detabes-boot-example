@@ -7,7 +7,6 @@ import cn.hutool.core.lang.Console;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -52,8 +51,8 @@ public class AstrictJarApplication {
             //文件写入-FileWriter
             if(null!=macAddress&&macAddress.trim().length()>0){
                 //创建文件
-//                    File file = ResourceUtils.getFile();
-                File file = FileUtil.file(ResourceUtils.CLASSPATH_URL_PREFIX + "test.txt");
+//                    File file = ResourceUtils.getFile(); ResourceUtils.CLASSPATH_URL_PREFIX +
+                File file = FileUtil.file( "test.txt");
                 FileWriter writer = new FileWriter(file);
                 writer.write(macAddress);
                 return "初次见面";
