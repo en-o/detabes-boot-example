@@ -26,7 +26,14 @@
 		</dependency>
 		<dependency>
 			<groupId>com.detabes</groupId>
+			<!--artifactId>starters-detabes-boot-web-jpa</artifactId>-->
 			<artifactId>starters-detabes-boot-web</artifactId>
+		<!--	<exclusions>
+				<exclusion>
+					<groupId>com.detabes</groupId>
+					<artifactId>webs-jwt</artifactId>
+				</exclusion>
+			</exclusions>-->
 		</dependency>
 	</dependencies>
 
