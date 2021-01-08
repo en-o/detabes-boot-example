@@ -7,9 +7,11 @@ import cn.hutool.core.lang.Console;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.File;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
@@ -33,7 +35,7 @@ public class AstrictJarApplication {
 
     @ResponseBody
     @GetMapping("isUse")
-    public String isUse() throws UnknownHostException, SocketException {
+    public String isUse() {
         String macAddress =MacUtil.getMacAddress();
         //文件读取
         try {
@@ -46,9 +48,13 @@ public class AstrictJarApplication {
                 return "相同mac,可以运行";
             }
         }catch (Exception e){
+            e.printStackTrace();
             //文件写入-FileWriter
             if(null!=macAddress&&macAddress.trim().length()>0){
-                FileWriter writer = new FileWriter("test.txt");
+                //创建文件
+//                    File file = ResourceUtils.getFile();
+                File file = FileUtil.file(ResourceUtils.CLASSPATH_URL_PREFIX + "test.txt");
+                FileWriter writer = new FileWriter(file);
                 writer.write(macAddress);
                 return "初次见面";
             }
