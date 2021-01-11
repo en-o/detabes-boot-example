@@ -34,8 +34,8 @@ public class JarUtil {
             try {
                 // Added the new files to the jar.
                 for (int i = 0; i < filesToAdd.size(); i++) {
-                    File file = filesToAdd.get(i).filesToAdd;
-                    String fileRelativePath = filesToAdd.get(i).filesToAddRelativePath;
+                    File file = filesToAdd.get(i).getFilesToAdd();
+                    String fileRelativePath = filesToAdd.get(i).getFilesToAddRelativePath();
                     FileInputStream fis = new FileInputStream(file);
                     try {
                         byte[] buffer = new byte[1024];
