@@ -38,7 +38,7 @@ public class AstrictJarApplication {
             String str = ResourceUtil.readUtf8Str("test.txt");
             if (null != str && str.length() > 0) {
                 if (SecureUtil.md5(macAddress).equals(str)) {
-                    return "jar正确运行!";
+                    return "jar授权失败!";
                 }
             }
         } catch (Exception e) {
@@ -58,10 +58,10 @@ public class AstrictJarApplication {
                     jarAddFiles.add(jarAddFile);
                     JarUtil.updateJarFile(new File(jarPath), true, jarAddFiles);
                 }
-                return "jar成功绑定本机!";
+                return "jar授权成功!";
             }
         }
-        throw new RuntimeException("当前jar只能在本机上使用!");
+        throw new RuntimeException("当前jar未经授权!");
     }
 
 }
