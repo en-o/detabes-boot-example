@@ -112,7 +112,7 @@
             - [主要是配置文件跟 pom依赖](example-doc/doc-swagger-cloud-aggregate-noregcenter/src/main/resources/application.yml)
             - 注意事项
                 1. 项目的编码集，由于我配中有中文，项目确实GBK的编码，导致第一次测试失败，页面加载不了接口数据
-                2. 配置 `uri` 注意，只需要 ip+port ，不要在后面加上后缀，要不然接口会多一重路径
+                2. 配置 `uri` 注意，只需要 ip+port ，要不要在后面加上后缀，根据需求决定，加上接口会多一重路径
                 3. 第二步配置好的同时， `location` 前面要配置项目的访问前缀，要不然接口会报错
     - ## cache数据相关
         - ### [redis消息推送跟监听](example-cache/caches-redis-pub/src/main/java/com/example/redis/pub/CachesRedisPubApplication.java)        
