@@ -19,5 +19,7 @@ public class JpaExampleVo extends SerializableVO<JpaExampleVo> {
 
     private String nickname;
 
+    private String uuid;
+
     private Integer age;
 }

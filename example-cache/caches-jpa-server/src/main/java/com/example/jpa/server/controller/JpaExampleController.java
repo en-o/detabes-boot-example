@@ -4,13 +4,10 @@ import com.detabes.result.result.ResultVO;
 import com.example.jpa.server.controller.vo.JpaExampleVo;
 import com.example.jpa.server.dao.JpaExampleDao;
 import com.example.jpa.server.entity.JpaExample;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import javax.persistence.Transient;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,27 +24,9 @@ public class JpaExampleController {
     @Resource
     private JpaExampleDao jpaExampleDao;
 
-    @Resource
-    private JdbcTemplate jdbcTemplate;
 
 
-    /**
-     * 初始化数据
-     */
-    @PostConstruct
-    public void init(){
-        jdbcTemplate.update("truncate table jap_example");
-        ArrayList<JpaExample> jpaExampleArrayListpaExample = new ArrayList<>();
-        JpaExample build = JpaExample.builder().age(11).name("谭宁1").nickname("测试1").build();
-        jpaExampleArrayListpaExample.add(build);
-        build = JpaExample.builder().age(12).name("谭宁2").nickname("测试2").build();
-        jpaExampleArrayListpaExample.add(build);
-        build = JpaExample.builder().age(13).name("谭宁3").nickname("测试3").build();
-        jpaExampleArrayListpaExample.add(build);
-        build = JpaExample.builder().age(14).name("谭宁4").nickname("测试4").build();
-        jpaExampleArrayListpaExample.add(build);
-        jpaExampleDao.saveAll(jpaExampleArrayListpaExample);
-    }
+
 
 
     /**

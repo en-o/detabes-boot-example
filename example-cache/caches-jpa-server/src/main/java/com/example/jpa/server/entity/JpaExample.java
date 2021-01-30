@@ -38,6 +38,9 @@ public class JpaExample extends JpaAuditFields<JpaExample> {
     @Column(columnDefinition = " varchar(20) comment '姓名' ")
     private String name;
 
+    @Column(columnDefinition = " varchar(50) comment 'uuid' ")
+    private String uuid;
+
     @Column(columnDefinition = " varchar(20) comment '昵称' ")
     private String nickname;
 
