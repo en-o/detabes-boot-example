@@ -1,5 +1,6 @@
 package io.tn.jpa.audit.bean;
 
+import com.detabes.entity.basics.vo.SerializableVO;
 import io.tn.jpa.audit.config.AuditListener;
 import io.tn.jpa.audit.config.Auditable;
 import lombok.*;
@@ -24,7 +25,7 @@ import javax.persistence.*;
 @DynamicInsert //动态插入
 @DynamicUpdate //动态赋值
 @EntityListeners(AuditListener.class)
-public class Mysql80 implements Auditable {
+public class Mysql80 extends SerializableVO<Mysql80> implements Auditable  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

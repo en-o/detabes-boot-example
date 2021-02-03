@@ -26,4 +26,26 @@ class AuditApplicationTests {
         mysql80Dao.save(mysql80);
     }
 
+    @Test
+    void testJpaAuditUpdate2() throws Exception {
+        Mysql80 mysql801 = mysql80Dao.findById(3).get();
+        mysql801.setSex("sad");
+        mysql801.setSex("323");
+        mysql80Dao.save(mysql801);
+    }
+
+    @Test
+    void testJpaAuditUpdate() throws Exception {
+        Mysql80 mysql80 = new Mysql80();
+        mysql80.setName("我的");
+        mysql80.setSex("我的");
+        mysql80.setId(3);
+        mysql80Dao.updateEntity(mysql80,"id");
+    }
+
+    @Test
+    void testJpaAuditSql(){
+        mysql80Dao.updata("mysql80",1);
+    }
+
 }

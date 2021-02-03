@@ -20,13 +20,16 @@ public class AuditListener {
         audit.setCreateUserUuid("123");
         audit.setCreateUserName("asd");
         audit.setCreateTime(LocalDateTime.now());
+        audit.setUpdateUserUuid("123");
+        audit.setUpdateUserName("asd");
+        audit.setUpdateTime(LocalDateTime.now());
     }
 
     @PreUpdate
     public void setUpdadtedOn(Auditable auditable) {
         AuditBean audit = auditable.getAudit();
-        audit.setUpdateUserUuid("123");
-        audit.setUpdateUserName("asd");
+        audit.setUpdateUserUuid("123d");
+        audit.setUpdateUserName("asdd");
         audit.setUpdateTime(LocalDateTime.now());
     }
 

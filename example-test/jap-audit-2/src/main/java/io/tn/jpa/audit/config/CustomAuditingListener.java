@@ -43,8 +43,8 @@ public class CustomAuditingListener implements ConfigurableObject {
      * @expection
      */
     public void markForCreate(Object ae) {
-        String[] propertyValue = {"loginName", "uuid", "loginName"
-                , "uuid"};
+        String[] propertyValue = {"loginNasdaame", "uuid", "loginNasdaame"
+                , "uuiadad"};
         //反射填充字段
         try {
             addValue(ae, ae.getClass(), CREATE_FILED, propertyValue);
@@ -65,8 +65,7 @@ public class CustomAuditingListener implements ConfigurableObject {
      * @expection
      */
     public void markForUpdate(Object ae) {
-        String[] propertyValue = {"loginName", "uuid", "loginName"
-                , "uuid"};
+        String[] propertyValue = {"DADA", "ADAD"};
         //反射填充字段
         try {
             addValue(ae, ae.getClass(), UPDATE_FILED, propertyValue);

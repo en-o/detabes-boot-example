@@ -22,7 +22,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @DynamicInsert //动态插入
 @DynamicUpdate //动态赋值
-//@EntityListeners({CustomAuditingListener.class})
+@EntityListeners({CustomAuditingListener.class})
 public class Mysql80 extends CommonBean<Mysql80> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
