@@ -14,3 +14,6 @@ knife4j:
       - name: 测试分组3
         uri: 192.168.0.51:8080
         location: /api/multistage/v2/api-docs?group=version2.0
+      - name: 测试分组4
+        uri: 192.168.4.51:2312
+        location: /api/v2/api-docs
