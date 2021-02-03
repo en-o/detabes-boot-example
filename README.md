@@ -65,7 +65,17 @@
                     
             - [x] [SHA验签之 sign在params中](example-aops/aops-apisign/src/main/java/com/example/sign/controller/SignParamsSHAController.java)           
                 - [单元测试跟使用参考](example-aops/aops-apisign/src/test/java/com/example/sign/controller/SignParamsSHAControllerTest.java)         
-    
+          - ### 接口版本
+               注意使用他会让接口重复不报错 
+               ```xml
+                  <!-- springboot 项目中引入: 使用注解 @ApiVersion 相关参数内部有说明 -->
+                  <dependency>
+                      <groupId>com.detabes</groupId>
+                      <artifactId>aops-apiversion</artifactId>
+                      <version>2.0.0</version>
+                  </dependency>
+              ``` 
+            - [使用参考](example-aops/aops-apiversion/src/main/java/io/tn/aop/version/controller/VersionController.java)  
     - ## doc文档相关
         - ### 单体项目示例
              ```xml
